@@ -24,18 +24,22 @@ public class MovableOverworld : MonoBehaviour {
 
 	public void OnMove_Down() {
 		gameObject.GetComponent<Transform>().position = new Vector3(gameObject.GetComponent<Transform>().position.x, gameObject.GetComponent<Transform>().position.y - 1, gameObject.GetComponent<Transform>().position.z);
+		Debug.Log("Moving!");
 	}
 
 	public void OnMove_Up() {
 		gameObject.GetComponent<Transform>().position = new Vector3(gameObject.GetComponent<Transform>().position.x, gameObject.GetComponent<Transform>().position.y + 1, gameObject.GetComponent<Transform>().position.z);
+		Debug.Log("Moving!");
 	}
 
 	public void OnMove_Left() {
 		gameObject.GetComponent<Transform>().position = new Vector3(gameObject.GetComponent<Transform>().position.x - 1, gameObject.GetComponent<Transform>().position.y, gameObject.GetComponent<Transform>().position.z);
+		Debug.Log("Moving!");
 	}
 
 	public void OnMove_Right() {
 		gameObject.GetComponent<Transform>().position = new Vector3(gameObject.GetComponent<Transform>().position.x + 1, gameObject.GetComponent<Transform>().position.y, gameObject.GetComponent<Transform>().position.z);
+		Debug.Log("Moving!");
 	}
 
 	IEnumerator WaitForMove(){
