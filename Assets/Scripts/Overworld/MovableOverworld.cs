@@ -43,7 +43,7 @@ public class MovableOverworld : MonoBehaviour {
 	}
 
 	IEnumerator WaitForMove(){
-		yield return new WaitForSeconds(.2f);
+		yield return new WaitForSeconds(.1f);
 		canMoveAgain = true;
 	}
 }
