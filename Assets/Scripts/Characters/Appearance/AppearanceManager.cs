@@ -107,4 +107,36 @@ public class AppearanceManager : MonoBehaviour {
 	private void OnChange_Legs() {
 		legsObjectReference.GetComponent<SpriteRenderer>().sprite = legsSpriteList[_legsIndex];
 	}
+
+	//OnClick functions that will increase or decrease the various body part index
+	//Will be used on Character Creation screen
+	public void OnClick_IncreaseHair(){
+		HairIndex = _hairIndex + 1;
+	}
+	public void OnClick_DecreaseHair() {
+		HairIndex = _hairIndex == 0 ? hairSpriteList.Count - 1 : _hairIndex - 1;
+	}
+	public void OnClick_IncreaseHead() {
+		HeadIndex = _headIndex + 1;
+
+	}
+	public void OnClick_DecreaseHead() {
+		HeadIndex = _headIndex == 0 ? headSpriteList.Count - 1 : _headIndex - 1;
+	}
+	public void OnClick_IncreaseLegs() {
+
+		LegsIndex = _legsIndex + 1;
+	}
+	public void OnClick_DecreaseLegs() {
+		LegsIndex = _legsIndex == 0 ? legsSpriteList.Count - 1 : _legsIndex - 1;
+
+	}
+	public void OnClick_IncreaseTorso() {
+		TorsoIndex = _torsoIndex + 1;
+
+	}
+	public void OnClick_DecreaseTorso() {
+		TorsoIndex = _torsoIndex == 0 ? torsoSpriteList.Count - 1 : _torsoIndex - 1;
+
+	}
 }
