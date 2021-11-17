@@ -40,7 +40,8 @@ public class Statable : MonoBehaviour
     }
     [SerializeField] public void SetCharaComposition(int Comp)
     {
-        CharaComposition = 3;
+        CharaComposition = CharaComposition;
+        CharaMaxHealth = 10 + CharaComposition
     }
     //Getter and setter for Muscle
     public int GetCharaMuscle()
@@ -49,7 +50,7 @@ public class Statable : MonoBehaviour
     }
     public void SetCharaMuscle(int Muscle)
     {
-        CharaMuscle = 2;
+        CharaMuscle = CharaMuscle;
     }
 
     //Getter and setter for Ferocity
@@ -60,7 +61,7 @@ public class Statable : MonoBehaviour
     public void SetCharaFerocity(int Fero)
     {
         //Does this work how I think it works?
-        CharaFerocity = CharaMuscle + 10;
+        CharaFerocity = CharaMuscle + CharaFerocity;
     }
 
     //Getter and setter for Sanity
@@ -70,7 +71,7 @@ public class Statable : MonoBehaviour
     }
     public void SetCharaSanity(int Sane)
     {
-       CharaSanity = 15;
+       CharaSanity = CharaSanity;
     }
 
     //Getter and setter for Knowledge
@@ -80,7 +81,8 @@ public class Statable : MonoBehaviour
     }
     public void SetCharaKnowledge(int Knowledge)
     {
-        CharaKnowledge = 2;
+        CharaKnowledge = CharaKnowledge;
+        CharaMaxMana = 10 + CharaKnowledge;
     }
 
     //Getter and Setter for Frenzy
@@ -90,7 +92,7 @@ public class Statable : MonoBehaviour
     }
     public void SetCharaFrenzy(int Frenzy)
     {
-        CharaFrenzy = 2;
+        CharaFrenzy = CharaFrenzy;
     }
 
     //Getter and setter for MoveRange
@@ -101,7 +103,7 @@ public class Statable : MonoBehaviour
     public void SetCharaMoveRange(int MoveRange)
     {
         //5 Appears, to me, as a reasonable average move speed
-        CharaMoveRange = 5;
+        CharaMoveRange = CharaMoveRange;
     }
 
     //Getter and setter for AttackRange
@@ -112,7 +114,7 @@ public class Statable : MonoBehaviour
     public void SetCharaAttackRange(int SwingRange)
     {
         //Attack Range extends from tile movement and should vary depending on action taken
-        CharaAttackRange = 2;
+        CharaAttackRange = CharaAttackRange;
     }
 
     //Getter and setter for MaxHealth
@@ -124,6 +126,7 @@ public class Statable : MonoBehaviour
     {
         CharaMaxHealth = 10 + CharaComposition;
     }
+
 
     //Getter and setter for MaxMana
     public int GetCharaMaxMana()
