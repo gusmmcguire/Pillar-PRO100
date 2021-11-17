@@ -5,32 +5,32 @@ using UnityEngine;
 public class Statable : MonoBehaviour
 {
     //Hitpoint Increase/Decrease
-    private int CharaComposition = 3;
+    [SerializeField] private int CharaComposition;
     //Added Damage
-    private int CharaMuscle = 2;
+    [SerializeField] private int CharaMuscle;
     //Average Damage
-    private int CharaFerocity = 10;
+    [SerializeField] private int CharaFerocity;
     //Mental State
-    private int CharaSanity = 15;
+    [SerializeField] private int CharaSanity;
     //Magic/Power know-how
-    private int CharaKnowledge = 2;
+    [SerializeField] private int CharaKnowledge;
     //Character "Barbaric rage"?
-    private int CharaFrenzy = 2;
+    [SerializeField] private int CharaFrenzy;
     //Range of tiles
-    private int CharaMoveRange = 5;
+    [SerializeField] private int CharaMoveRange;
     //Attacks after tile movement
-    private int CharaAttackRange = 2;
+    [SerializeField] private int CharaAttackRange;
     //HP
-    private int CharaMaxHealth;
+    [SerializeField] private int CharaMaxHealth;
     //MP
-    private int CharaMaxMana;
+    [SerializeField] private int CharaMaxMana;
 
     //SideCharacterStats to go Here-ish(Porbably use random to generate a concrete value)
     //Legendary Character stats to go below this ^ (Needs to be CONCRETE)
 
 
     //Getter and setter for Composition
-    [SerializeField] public int GetCharaComposition()
+    public int GetCharaComposition()
     {
         return CharaComposition;
     }
@@ -40,90 +40,97 @@ public class Statable : MonoBehaviour
         CharaMaxHealth = 10 + CharaComposition
     }
     //Getter and setter for Muscle
-    [SerializeField] public int GetCharaMuscle()
+    public int GetCharaMuscle()
     {
         return CharaMuscle;
     }
-    [SerializeField] public void SetCharaMuscle(int Muscle)
+    public void SetCharaMuscle(int Muscle)
     {
         CharaMuscle = CharaMuscle;
     }
 
     //Getter and setter for Ferocity
-    [SerializeField] public int GetCharaFerocity()
+    public int GetCharaFerocity()
     {
         return CharaFerocity;
     }
-    [SerializeField] public void SetCharaFerocity(int Fero)
+    public void SetCharaFerocity(int Fero)
     {
         //Does this work how I think it works?
         CharaFerocity = CharaMuscle + CharaFerocity;
     }
 
     //Getter and setter for Sanity
-    [SerializeField] public int GetCharaSanity()
+    public int GetCharaSanity()
     {
         return CharaSanity;
     }
-    [SerializeField] public void SetCharaSanity(int Sane)
+    public void SetCharaSanity(int Sane)
     {
        CharaSanity = CharaSanity;
     }
 
     //Getter and setter for Knowledge
-    [SerializeField] public int GetCharaKnowledge()
+    public int GetCharaKnowledge()
     {
         return CharaKnowledge;
     }
-    [SerializeField] public void SetCharaKnowledge(int Knowledge)
+    public void SetCharaKnowledge(int Knowledge)
     {
         CharaKnowledge = CharaKnowledge;
         CharaMaxMana = 10 + CharaKnowledge;
     }
 
     //Getter and Setter for Frenzy
-    [SerializeField] public int GetCharaFrenzy()
+    public int GetCharaFrenzy()
     {
         return CharaFrenzy;
     }
-    [SerializeField] public void SetCharaFrenzy(int Frenzy)
+    public void SetCharaFrenzy(int Frenzy)
     {
         CharaFrenzy = CharaFrenzy;
     }
 
     //Getter and setter for MoveRange
-    [SerializeField] public int GetCharaMoveRange()
+    public int GetCharaMoveRange()
     {
         return CharaMoveRange;
     }
-    [SerializeField] public void SetCharaMoveRange(int MoveRange)
+    public void SetCharaMoveRange(int MoveRange)
     {
         //5 Appears, to me, as a reasonable average move speed
         CharaMoveRange = CharaMoveRange;
     }
 
     //Getter and setter for AttackRange
-    [SerializeField] public int GetCharaAttackRange()
+    public int GetCharaAttackRange()
     {
         return CharaAttackRange;
     }
-    [SerializeField] public void SetCharaAttackRange(int SwingRange)
+    public void SetCharaAttackRange(int SwingRange)
     {
         //Attack Range extends from tile movement and should vary depending on action taken
         CharaAttackRange = CharaAttackRange;
     }
 
     //Getter and setter for MaxHealth
-    [SerializeField] public int GetCharaMaxHealth()
+    public int GetCharaMaxHealth()
     {
         return CharaMaxHealth;
+    }
+    public void SetCharaMaxHealth(int Health)
+    {
+        CharaMaxHealth = 10 + CharaComposition;
     }
 
 
     //Getter and setter for MaxMana
-    [SerializeField] public int GetCharaMaxMana()
+    public int GetCharaMaxMana()
     {
         return CharaMaxMana;
     }
-
+    public void SetCharaMana(int Mana)
+    {
+        CharaMaxMana = 10 + CharaKnowledge;
+    }
 }
