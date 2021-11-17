@@ -22,8 +22,12 @@ public class Statable : MonoBehaviour
     [SerializeField] private int CharaAttackRange;
     //HP
     [SerializeField] private int CharaMaxHealth;
+    private int CharaHealth;
     //MP
     [SerializeField] private int CharaMaxMana;
+    private int CharaMana;
+    //IsKilled;
+    private bool isKilled = false;
 
     //SideCharacterStats to go Here-ish(Porbably use random to generate a concrete value)
     //Legendary Character stats to go below this ^ (Needs to be CONCRETE)
@@ -126,8 +130,36 @@ public class Statable : MonoBehaviour
     {
         return CharaMaxMana;
     }
-    public void SetCharaMana(int Mana)
+    public void SetCharaMaxMana(int Mana)
     {
         CharaMaxMana = 10 + CharaKnowledge;
+    }
+    
+    //Getter and setter for Health
+    public int GetCharaHealth()
+    {
+        return CharaHealth;
+    }
+    public void SetCharaHealth(int health = 10)
+    {
+        CharaHealth = health;
+        if (CharaHealth <= 0) isKilled = true;
+        else if (isKilled) isKilled = false;
+    }
+
+    //Getter and setter for MaxMana
+    public int GetCharaMana()
+    {
+        return CharaMana;
+    }
+    public void SetCharaMana(int mana = 10)
+    {
+        CharaMana = mana;
+    }
+
+    //Getter for isKilled
+    public bool GetIsKilled()
+    {
+        return isKilled;
     }
 }
