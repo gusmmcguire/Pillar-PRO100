@@ -5,21 +5,21 @@ using UnityEngine;
 public class Statable : MonoBehaviour
 {
     //Hitpoint Increase/Decrease
-    private int CharaComposition;
+    private int CharaComposition = 3;
     //Added Damage
-    private int CharaMuscle;
+    private int CharaMuscle = 2;
     //Average Damage
-    private int CharaFerocity;
+    private int CharaFerocity = 10;
     //Mental State
-    private int CharaSanity;
+    private int CharaSanity = 15;
     //Magic/Power know-how
-    private int CharaKnowledge;
+    private int CharaKnowledge = 2;
     //Character "Barbaric rage"?
-    private int CharaFrenzy;
+    private int CharaFrenzy = 2;
     //Range of tiles
-    private int CharaMoveRange;
+    private int CharaMoveRange = 5;
     //Attacks after tile movement
-    private int CharaAttackRange;
+    private int CharaAttackRange = 2;
     //HP
     private int CharaMaxHealth;
     //MP
@@ -36,7 +36,8 @@ public class Statable : MonoBehaviour
     }
     [SerializeField] public void SetCharaComposition(int Comp)
     {
-        CharaComposition = 3;
+        CharaComposition = CharaComposition;
+        CharaMaxHealth = 10 + CharaComposition
     }
     //Getter and setter for Muscle
     [SerializeField] public int GetCharaMuscle()
@@ -45,7 +46,7 @@ public class Statable : MonoBehaviour
     }
     [SerializeField] public void SetCharaMuscle(int Muscle)
     {
-        CharaMuscle = 2;
+        CharaMuscle = CharaMuscle;
     }
 
     //Getter and setter for Ferocity
@@ -56,7 +57,7 @@ public class Statable : MonoBehaviour
     [SerializeField] public void SetCharaFerocity(int Fero)
     {
         //Does this work how I think it works?
-        CharaFerocity = CharaMuscle + 10;
+        CharaFerocity = CharaMuscle + CharaFerocity;
     }
 
     //Getter and setter for Sanity
@@ -66,7 +67,7 @@ public class Statable : MonoBehaviour
     }
     [SerializeField] public void SetCharaSanity(int Sane)
     {
-       CharaSanity = 15;
+       CharaSanity = CharaSanity;
     }
 
     //Getter and setter for Knowledge
@@ -76,7 +77,8 @@ public class Statable : MonoBehaviour
     }
     [SerializeField] public void SetCharaKnowledge(int Knowledge)
     {
-        CharaKnowledge = 2;
+        CharaKnowledge = CharaKnowledge;
+        CharaMaxMana = 10 + CharaKnowledge;
     }
 
     //Getter and Setter for Frenzy
@@ -86,7 +88,7 @@ public class Statable : MonoBehaviour
     }
     [SerializeField] public void SetCharaFrenzy(int Frenzy)
     {
-        CharaFrenzy = 2;
+        CharaFrenzy = CharaFrenzy;
     }
 
     //Getter and setter for MoveRange
@@ -97,7 +99,7 @@ public class Statable : MonoBehaviour
     [SerializeField] public void SetCharaMoveRange(int MoveRange)
     {
         //5 Appears, to me, as a reasonable average move speed
-        CharaMoveRange = 5;
+        CharaMoveRange = CharaMoveRange;
     }
 
     //Getter and setter for AttackRange
@@ -108,7 +110,7 @@ public class Statable : MonoBehaviour
     [SerializeField] public void SetCharaAttackRange(int SwingRange)
     {
         //Attack Range extends from tile movement and should vary depending on action taken
-        CharaAttackRange = 2;
+        CharaAttackRange = CharaAttackRange;
     }
 
     //Getter and setter for MaxHealth
@@ -116,18 +118,12 @@ public class Statable : MonoBehaviour
     {
         return CharaMaxHealth;
     }
-    [SerializeField] public void SetCharaMaxHealth(int Health)
-    {
-        CharaMaxHealth = 10 + CharaComposition;
-    }
+
 
     //Getter and setter for MaxMana
     [SerializeField] public int GetCharaMaxMana()
     {
         return CharaMaxMana;
     }
-    [SerializeField] public void SetCharaMana(int Mana)
-    {
-        CharaMaxMana = 10 + CharaKnowledge;
-    }
+
 }
