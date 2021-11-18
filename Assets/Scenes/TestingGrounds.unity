@@ -301,6 +301,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9975fab62f06c364891e7951ad8672b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectorObject: {fileID: 983394884}
 --- !u!114 &621543034
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1354,8 +1355,8 @@ MonoBehaviour:
     m_ActionName: Overworld/Movement[/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 983394887}
-        m_TargetAssemblyTypeName: SelectorCombat, Assembly-CSharp
+      - m_Target: {fileID: 621543033}
+        m_TargetAssemblyTypeName: MoveableCombat, Assembly-CSharp
         m_MethodName: OnMove_CalcDir
         m_Mode: 0
         m_Arguments:
@@ -1384,22 +1385,6 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 8ce7b2c1-3969-4058-804a-2794f21b0b28
     m_ActionName: Combat/Submit[/Keyboard/enter,/Keyboard/e,/Keyboard/space,/Keyboard/c]
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: 153635e9-107e-44e9-9d81-6c75224019b3
-    m_ActionName: Combat/mouse delta[/Mouse/delta]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: Game
   m_DefaultActionMap: Combat
@@ -1713,7 +1698,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1342034610}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.00000011920929, z: -10}
+  m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2214,12 +2199,12 @@ MonoBehaviour:
   m_ScreenX: 0.5
   m_ScreenY: 0.5
   m_CameraDistance: 10
-  m_DeadZoneWidth: 0.65779114
-  m_DeadZoneHeight: 0.70071405
+  m_DeadZoneWidth: 0.879666
+  m_DeadZoneHeight: 0.7636771
   m_DeadZoneDepth: 2
   m_UnlimitedSoftZone: 0
-  m_SoftZoneWidth: 0.9204822
-  m_SoftZoneHeight: 0.85357094
+  m_SoftZoneWidth: 0.99131507
+  m_SoftZoneHeight: 0.9887565
   m_BiasX: 0
   m_BiasY: 0
   m_CenterOnActivate: 1

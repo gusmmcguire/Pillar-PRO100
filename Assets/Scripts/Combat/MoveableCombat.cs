@@ -1,18 +1,49 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class MoveableCombat : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+	private bool canMoveAgain = true;
+	[SerializeField] private GameObject selectorObject;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+	public void OnMove_CalcDir(InputAction.CallbackContext context) {
+		if (canMoveAgain) {
+
+			Vector2 movementVector = context.ReadValue<Vector2>();
+			if (movementVector.x > 0) OnMove_Right();
+			else if (movementVector.x != 0) OnMove_Left();
+
+			if (movementVector.y > 0) OnMove_Up();
+			else if (movementVector.y != 0) OnMove_Down();
+
+			canMoveAgain = false;
+			StartCoroutine(WaitForMove());
+		}
+	}
+
+	private void OnMove_Down() {
+		if(!selectorObject) gameObject.GetComponent<Transform>().position = new Vector3(gameObject.GetComponent<Transform>().position.x, gameObject.GetComponent<Transform>().position.y - 1, 0);
+		else selectorObject.GetComponent<Transform>().position = new Vector3(selectorObject.GetComponent<Transform>().position.x, selectorObject.GetComponent<Transform>().position.y - 1, 0);
+	}
+
+	private void OnMove_Up() {
+		if (!selectorObject) gameObject.GetComponent<Transform>().position = new Vector3(gameObject.GetComponent<Transform>().position.x, gameObject.GetComponent<Transform>().position.y + 1, 0);
+		else selectorObject.GetComponent<Transform>().position = new Vector3(selectorObject.GetComponent<Transform>().position.x, selectorObject.GetComponent<Transform>().position.y + 1, 0);
+	}
+
+	private void OnMove_Left() {
+		if (!selectorObject) gameObject.GetComponent<Transform>().position = new Vector3(gameObject.GetComponent<Transform>().position.x - 1, gameObject.GetComponent<Transform>().position.y, 0);
+		else selectorObject.GetComponent<Transform>().position = new Vector3(selectorObject.GetComponent<Transform>().position.x - 1, selectorObject.GetComponent<Transform>().position.y, 0);
+	}
+
+	private void OnMove_Right() {
+		if (!selectorObject) gameObject.GetComponent<Transform>().position = new Vector3(gameObject.GetComponent<Transform>().position.x + 1, gameObject.GetComponent<Transform>().position.y, 0);
+		else selectorObject.GetComponent<Transform>().position = new Vector3(selectorObject.GetComponent<Transform>().position.x + 1, selectorObject.GetComponent<Transform>().position.y, 0);
+	}
+	IEnumerator WaitForMove() {
+		yield return new WaitForSeconds(.1f);
+		canMoveAgain = true;
+	}
 }

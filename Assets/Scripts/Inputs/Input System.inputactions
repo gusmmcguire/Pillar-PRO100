@@ -674,15 +674,6 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
-                },
-                {
-                    "name": "mouse delta",
-                    "type": "Value",
-                    "id": "153635e9-107e-44e9-9d81-6c75224019b3",
-                    "expectedControlType": "Vector2",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -903,17 +894,6 @@
                     "processors": "",
                     "groups": "Game",
                     "action": "Submit",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "d0188241-f8ce-49da-93d5-33dae7b7c5d2",
-                    "path": "<Mouse>/delta",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Game",
-                    "action": "mouse delta",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

@@ -696,15 +696,6 @@ public partial class @InputSystem : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""mouse delta"",
-                    ""type"": ""Value"",
-                    ""id"": ""153635e9-107e-44e9-9d81-6c75224019b3"",
-                    ""expectedControlType"": ""Vector2"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -927,17 +918,6 @@ public partial class @InputSystem : IInputActionCollection2, IDisposable
                     ""action"": ""Submit"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""d0188241-f8ce-49da-93d5-33dae7b7c5d2"",
-                    ""path"": ""<Mouse>/delta"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Game"",
-                    ""action"": ""mouse delta"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -1001,7 +981,6 @@ public partial class @InputSystem : IInputActionCollection2, IDisposable
         m_Combat = asset.FindActionMap("Combat", throwIfNotFound: true);
         m_Combat_Movement = m_Combat.FindAction("Movement", throwIfNotFound: true);
         m_Combat_Submit = m_Combat.FindAction("Submit", throwIfNotFound: true);
-        m_Combat_mousedelta = m_Combat.FindAction("mouse delta", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -1209,14 +1188,12 @@ public partial class @InputSystem : IInputActionCollection2, IDisposable
     private ICombatActions m_CombatActionsCallbackInterface;
     private readonly InputAction m_Combat_Movement;
     private readonly InputAction m_Combat_Submit;
-    private readonly InputAction m_Combat_mousedelta;
     public struct CombatActions
     {
         private @InputSystem m_Wrapper;
         public CombatActions(@InputSystem wrapper) { m_Wrapper = wrapper; }
         public InputAction @Movement => m_Wrapper.m_Combat_Movement;
         public InputAction @Submit => m_Wrapper.m_Combat_Submit;
-        public InputAction @mousedelta => m_Wrapper.m_Combat_mousedelta;
         public InputActionMap Get() { return m_Wrapper.m_Combat; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1232,9 +1209,6 @@ public partial class @InputSystem : IInputActionCollection2, IDisposable
                 @Submit.started -= m_Wrapper.m_CombatActionsCallbackInterface.OnSubmit;
                 @Submit.performed -= m_Wrapper.m_CombatActionsCallbackInterface.OnSubmit;
                 @Submit.canceled -= m_Wrapper.m_CombatActionsCallbackInterface.OnSubmit;
-                @mousedelta.started -= m_Wrapper.m_CombatActionsCallbackInterface.OnMousedelta;
-                @mousedelta.performed -= m_Wrapper.m_CombatActionsCallbackInterface.OnMousedelta;
-                @mousedelta.canceled -= m_Wrapper.m_CombatActionsCallbackInterface.OnMousedelta;
             }
             m_Wrapper.m_CombatActionsCallbackInterface = instance;
             if (instance != null)
@@ -1245,9 +1219,6 @@ public partial class @InputSystem : IInputActionCollection2, IDisposable
                 @Submit.started += instance.OnSubmit;
                 @Submit.performed += instance.OnSubmit;
                 @Submit.canceled += instance.OnSubmit;
-                @mousedelta.started += instance.OnMousedelta;
-                @mousedelta.performed += instance.OnMousedelta;
-                @mousedelta.canceled += instance.OnMousedelta;
             }
         }
     }
@@ -1283,6 +1254,5 @@ public partial class @InputSystem : IInputActionCollection2, IDisposable
     {
         void OnMovement(InputAction.CallbackContext context);
         void OnSubmit(InputAction.CallbackContext context);
-        void OnMousedelta(InputAction.CallbackContext context);
     }
 }
