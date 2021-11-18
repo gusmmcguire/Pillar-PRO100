@@ -13,6 +13,6 @@ public class LockToGrid : MonoBehaviour
         //this is to ensure that we are never off our grid
         if (gameObject.GetComponent<SelectorCombat>() && gameObject.GetComponent<SelectorCombat>().mouseHasControl) return;
         if(gameObject.GetComponent<Transform>().position.x % 1 != 0 || gameObject.GetComponent<Transform>().position.y % 1 != 0)
-        gameObject.GetComponent<Transform>().position = new Vector3(Mathf.Round(gameObject.GetComponent<Transform>().position.x), Mathf.Round(gameObject.GetComponent<Transform>().position.y), gameObject.GetComponent<Transform>().position.z);
+        gameObject.GetComponent<Transform>().position = new Vector3(Mathf.Round(gameObject.GetComponent<Transform>().position.x), Mathf.Round(gameObject.GetComponent<Transform>().position.y), 0);
     }
 }

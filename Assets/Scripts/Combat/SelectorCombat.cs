@@ -14,7 +14,7 @@ public class SelectorCombat : MonoBehaviour
 
 	private void Update() {
 		if(Mouse.current.delta.ReadUnprocessedValue().x != 0 || Mouse.current.delta.ReadUnprocessedValue().y != 0) {
-			gameObject.GetComponent<Transform>().position = worldCamera.ScreenToWorldPoint(new Vector3(Mouse.current.position.ReadUnprocessedValue().x, Mouse.current.position.ReadUnprocessedValue().y, 1));
+			gameObject.GetComponent<Transform>().position = worldCamera.ScreenToWorldPoint(new Vector3(Mouse.current.position.ReadUnprocessedValue().x, Mouse.current.position.ReadUnprocessedValue().y, 0));
 			mouseHasControl = true;
 		}else{
 			mouseHasControl = false;
@@ -42,22 +42,22 @@ public class SelectorCombat : MonoBehaviour
 	}
 
 	private void OnMove_Down() {
-		gameObject.GetComponent<Transform>().position = new Vector3(gameObject.GetComponent<Transform>().position.x, gameObject.GetComponent<Transform>().position.y - 1, gameObject.GetComponent<Transform>().position.z);
+		gameObject.GetComponent<Transform>().position = new Vector3(gameObject.GetComponent<Transform>().position.x, gameObject.GetComponent<Transform>().position.y - 1, 0);
 		Debug.Log("Moving!");
 	}
 
 	private void OnMove_Up() {
-		gameObject.GetComponent<Transform>().position = new Vector3(gameObject.GetComponent<Transform>().position.x, gameObject.GetComponent<Transform>().position.y + 1, gameObject.GetComponent<Transform>().position.z);
+		gameObject.GetComponent<Transform>().position = new Vector3(gameObject.GetComponent<Transform>().position.x, gameObject.GetComponent<Transform>().position.y + 1, 0);
 		Debug.Log("Moving!");
 	}
 
 	private void OnMove_Left() {
-		gameObject.GetComponent<Transform>().position = new Vector3(gameObject.GetComponent<Transform>().position.x - 1, gameObject.GetComponent<Transform>().position.y, gameObject.GetComponent<Transform>().position.z);
+		gameObject.GetComponent<Transform>().position = new Vector3(gameObject.GetComponent<Transform>().position.x - 1, gameObject.GetComponent<Transform>().position.y, 0);
 		Debug.Log("Moving!");
 	}
 
 	private void OnMove_Right() {
-		gameObject.GetComponent<Transform>().position = new Vector3(gameObject.GetComponent<Transform>().position.x + 1, gameObject.GetComponent<Transform>().position.y, gameObject.GetComponent<Transform>().position.z);
+		gameObject.GetComponent<Transform>().position = new Vector3(gameObject.GetComponent<Transform>().position.x + 1, gameObject.GetComponent<Transform>().position.y, 0);
 		Debug.Log("Moving!");
 	}
 
