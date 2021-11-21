@@ -29,9 +29,24 @@ public class Statable : MonoBehaviour
     //IsKilled;
     private bool isKilled = false;
 
+    public void Awake()
+    {
+        CharaComposition = 10;
+        CharaMuscle = 10;
+        CharaFerocity = 10;
+        CharaSanity = 3;
+        CharaKnowledge = 10;
+        CharaFrenzy = 10;
+        CharaMoveRange = 5;
+        CharaAttackRange = 5;
+        CharaMaxHealth = 20;
+        CharaHealth = 20;
+        CharaMaxMana = 20;
+        CharaMana = 20;
+    }
+
     //SideCharacterStats to go Here-ish(Porbably use random to generate a concrete value)
     //Legendary Character stats to go below this ^ (Needs to be CONCRETE)
-
 
     //Getter and setter for Composition
     public int GetCharaComposition()
@@ -129,10 +144,6 @@ public class Statable : MonoBehaviour
     public int GetCharaMaxMana()
     {
         return CharaMaxMana;
-    }
-    public void SetCharaMaxMana(int Mana)
-    {
-        CharaMaxMana = 10 + CharaKnowledge;
     }
     
     //Getter and setter for Health

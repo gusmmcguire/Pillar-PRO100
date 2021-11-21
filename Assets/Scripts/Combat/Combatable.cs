@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using System;
+using TMPro;
 using UnityEngine;
 
 public class Combatable : MonoBehaviour
@@ -12,7 +14,9 @@ public class Combatable : MonoBehaviour
     /// <returns>The distance between objects as an int</returns>
     public Vector2 OnHover_CheckDistance(Transform objectTransform)
     {
-        return new Vector2(objectTransform.position.x, objectTransform.position.y);
+        float x = Math.Abs(objectTransform.position.x - gameObject.transform.position.x);
+        float y = Math.Abs(objectTransform.position.y - gameObject.transform.position.y);
+        return new Vector2(x, y);
     }
 
     /// <summary>
@@ -22,24 +26,29 @@ public class Combatable : MonoBehaviour
     /// normalized against 15, penalized by low sanity and distance</remarks>
     /// <param name="objectTrasform">The object that the user is targeting</param>
     /// <returns>The chance to land an attack as a float</returns>
-    public float OnHover_CalcHitChance(Transform objectTrasform)
+    public float OnHover_CalcHitChance(Transform objectTransform)
     {
-        int sum = gameObject.GetComponent<Statable>().GetCharaMuscle() + GetComponent<Statable>().GetCharaFerocity() - (GetComponent<Statable>().GetCharaFrenzy() / 2);
-        float hitChance = sum / 15.0f;
+        int muscle = gameObject.GetComponent<Statable>().GetCharaMuscle();
+        int ferocity = gameObject.GetComponent<Statable>().GetCharaFerocity();
+        int frenzy = gameObject.GetComponent<Statable>().GetCharaFrenzy();
 
-        // Gets sanity and normalizes it against 7 to calculate the penalty for having low sanity
-        int sanity = GetComponent<Statable>().GetCharaSanity();
-        if (sanity < 7 )
-        {
-            float normalizedSanity = sanity / 7;
-            hitChance *= normalizedSanity;
-        }
-        
-        int distance = (int)Mathf.Round(OnHover_CheckDistance(transform).magnitude);
+        int sum = muscle + ferocity - (frenzy / 2);
+        float hitChance = sum / 15.0f;
+      
+        int distance = (int)Mathf.Round(OnHover_CheckDistance(objectTransform).magnitude);
         if (distance > 3)
         {
             distance -= 3;
-            hitChance -= distance / 10.0f ;
+            float penalty = distance / 10.0f;
+            hitChance -= penalty;
+        }
+
+        // Gets sanity and normalizes it against 7 to calculate the penalty for having low sanity
+        int sanity = GetComponent<Statable>().GetCharaSanity();
+        if (sanity < 7)
+        {
+            float normalizedSanity = sanity / 7.0f;
+            hitChance *= normalizedSanity;
         }
 
         return (hitChance < 0) ? 0 : hitChance;
@@ -82,8 +91,11 @@ public class Combatable : MonoBehaviour
     /// <param name="damage">The amount of damage recieved</param>
     public void OnDamaged_DisplayDamage(int damage)
     {
-        GameObject textObject = GameObject.Find("Damage Text");
-        textObject.GetComponent<TextMesh>().text = $"{damage} damage";
-        textObject.transform.position.Set(gameObject.transform.position.x + 0.5f, gameObject.transform.position.x + 0.5f, gameObject.transform.position.z + 1);
+        GameObject textObject = GameObject.Find("DamageText");
+        textObject.GetComponent<TextMeshProUGUI>().text = $"{damage} damage";
+        float x = gameObject.transform.position.x + 0.45f;
+        float y = gameObject.transform.position.y + 0.45f;
+        float z = gameObject.transform.position.z - 1;
+        textObject.transform.SetPositionAndRotation(new Vector3(x, y, z), new Quaternion());
     }
 }
