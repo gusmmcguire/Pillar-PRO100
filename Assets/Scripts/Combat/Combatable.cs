@@ -92,9 +92,10 @@ public class Combatable : MonoBehaviour
     private void OnDamaged_DisplayDamage(int damage)
     {
         GameObject textObject = GameObject.Find("DamageText");
+        textObject.GetComponent<DamageText>().shouldFloat = true;
         textObject.GetComponent<TextMeshProUGUI>().text = $"{damage} damage";
         float x = gameObject.transform.position.x + 0.45f;
-        float y = gameObject.transform.position.y + 0.45f;
+        float y = gameObject.transform.position.y + 0.05f;
         float z = gameObject.transform.position.z - 1;
         textObject.transform.SetPositionAndRotation(new Vector3(x, y, z), new Quaternion());
     }

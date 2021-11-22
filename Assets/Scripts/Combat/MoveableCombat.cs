@@ -9,14 +9,19 @@ public class MoveableCombat : MonoBehaviour
 	[SerializeField] private GameObject selectorObject;
 	public Collider2D currentCollider;
 	public Vector3 prevPosition;
+	public Vector2 directionVector;
 
 	private void FixedUpdate() {
 		if(currentCollider){
 			if (currentCollider.CompareTag("Enemy")) {
-				Debug.Log("enemy attack");
+				//logic for where to move next to enemy
+				bool below = directionVector.y < 0 ? true : false;
+				bool left = directionVector.x < 0 ? true : false;
+				gameObject.transform.position = new Vector3(left ? gameObject.transform.position.x - 1 : gameObject.transform.position.x + 1, below ? gameObject.transform.position.y- 1 : gameObject.transform.position.y + 1, gameObject.transform.position.z);
 				gameObject.GetComponent<Combatable>().OnSelect_Attack(currentCollider.gameObject);
+			}else{
+				gameObject.transform.position = prevPosition;
 			}
-			gameObject.transform.position = prevPosition;
 		}
 	}
 
