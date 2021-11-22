@@ -7,7 +7,6 @@ public class SelectorCombat : MonoBehaviour {
 
 	[SerializeField] private Camera worldCamera;
 	[SerializeField] private GameObject associatiedCharacter;
-	private bool canMoveAgain = true;
 	public bool mouseHasControl = false;
 
 	private void Update() {
@@ -21,20 +20,14 @@ public class SelectorCombat : MonoBehaviour {
 	}
 
 	public void OnSubmit_Move(InputAction.CallbackContext context) {
-		if (canMoveAgain) {
-			Statable stats = associatiedCharacter.GetComponent<Statable>();
-			associatiedCharacter.GetComponent<MoveableCombat>().directionVector = associatiedCharacter.GetComponent<Combatable>().OnHover_CheckDistance(gameObject.transform);
-			if (associatiedCharacter.GetComponent<MoveableCombat>().directionVector.magnitude <= stats.GetCharaMoveRange()) {
-				associatiedCharacter.GetComponent<MoveableCombat>().prevPosition = associatiedCharacter.transform.position;
-				associatiedCharacter.transform.position = gameObject.transform.position;
-				canMoveAgain = false;
-				StartCoroutine(WaitForMove());
-			}
+		if (!context.performed) return;
+		Statable stats = associatiedCharacter.GetComponent<Statable>();
+		associatiedCharacter.GetComponent<MoveableCombat>().directionVector = associatiedCharacter.GetComponent<Combatable>().OnHover_CheckDistance(gameObject.transform);
+		if (associatiedCharacter.GetComponent<MoveableCombat>().directionVector.magnitude <= stats.GetCharaMoveRange()) {
+			associatiedCharacter.GetComponent<MoveableCombat>().prevPosition = associatiedCharacter.transform.position;
+			associatiedCharacter.transform.position = gameObject.transform.position;
 		}
+
 	}
 
-	IEnumerator WaitForMove() {
-		yield return new WaitForSeconds(.5f);
-		canMoveAgain = true;
-	}
 }
