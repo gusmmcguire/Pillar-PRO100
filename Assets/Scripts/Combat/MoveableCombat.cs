@@ -7,6 +7,18 @@ public class MoveableCombat : MonoBehaviour
 {
 	private bool canMoveAgain = true;
 	[SerializeField] private GameObject selectorObject;
+	public Collider2D currentCollider;
+	public Vector3 prevPosition;
+
+	private void FixedUpdate() {
+		if(currentCollider){
+			if (currentCollider.CompareTag("Enemy")) {
+				Debug.Log("enemy attack");
+				gameObject.GetComponent<Combatable>().OnSelect_Attack(currentCollider.gameObject);
+			}
+			gameObject.transform.position = prevPosition;
+		}
+	}
 
 	public void OnMove_CalcDir(InputAction.CallbackContext context) {
 		if (canMoveAgain) {
@@ -45,5 +57,14 @@ public class MoveableCombat : MonoBehaviour
 	IEnumerator WaitForMove() {
 		yield return new WaitForSeconds(.1f);
 		canMoveAgain = true;
+	}
+
+	private void OnTriggerEnter2D(Collider2D collision) {
+		if (collision.gameObject.CompareTag("CameraBounding")) return;
+		currentCollider = collision;
+		
+	}
+	private void OnTriggerExit2D(Collider2D collision) {
+		currentCollider = null;
 	}
 }

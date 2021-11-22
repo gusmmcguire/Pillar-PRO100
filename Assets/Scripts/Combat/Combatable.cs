@@ -89,7 +89,7 @@ public class Combatable : MonoBehaviour
     /// Outputs the damage recieved next to the object
     /// </summary>
     /// <param name="damage">The amount of damage recieved</param>
-    public void OnDamaged_DisplayDamage(int damage)
+    private void OnDamaged_DisplayDamage(int damage)
     {
         GameObject textObject = GameObject.Find("DamageText");
         textObject.GetComponent<TextMeshProUGUI>().text = $"{damage} damage";
