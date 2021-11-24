@@ -5,6 +5,7 @@ using TMPro;
 using UnityEngine;
 
 public class Combatable : MonoBehaviour {
+	int i = 0;
 
 	/// <summary>
 	/// Checks the distance between currently active object and targeted object
@@ -60,7 +61,9 @@ public class Combatable : MonoBehaviour {
 		Combatable combatComponent = otherObject.GetComponent<Combatable>();
 
 		if (combatComponent) {
-			if (OnHover_CalcHitChance(gameObject.transform) >= UnityEngine.Random.Range(0.0f, 1.0f)) {
+			float hitChance = OnHover_CalcHitChance(gameObject.transform);
+			float rndHit = UnityEngine.Random.Range(0.0f, 1.0f);
+			if (hitChance >= rndHit) {
 				combatComponent.OnDamaged_LowerHealth(damage);
 			}
 			else {
@@ -88,12 +91,17 @@ public class Combatable : MonoBehaviour {
 	/// <param name="damage">The amount of damage recieved</param>
 	private void OnDamaged_DisplayDamage(int damage) {
 		GameObject textObject = GameObject.Find("DamageText");
-		textObject.GetComponent<DamageText>().shouldFloat = true;
-		string textToDisplay = damage == 0 ? "Miss" : $"{damage} damage";
+		i++;
+		string textToDisplay = (damage == 0) ? $"Miss : {i}" : $"{damage} damage : {i}";
 		textObject.GetComponent<TextMeshProUGUI>().text = textToDisplay;
+
+		Debug.Log($"{textToDisplay} : {textObject.GetComponent<TextMeshProUGUI>().text} : {damage} : {textObject.GetComponent<DamageText>().shouldFloat}");
+		
 		float x = gameObject.transform.position.x + 0.45f;
 		float y = gameObject.transform.position.y + 0.05f;
 		float z = gameObject.transform.position.z - 1;
+		
 		textObject.transform.SetPositionAndRotation(new Vector3(x, y, z), new Quaternion());
+		textObject.GetComponent<DamageText>().shouldFloat = true;
 	}
 }
