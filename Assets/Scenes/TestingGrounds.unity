@@ -267,9 +267,9 @@ MonoBehaviour:
   headObjectReference: {fileID: 799691388}
   torsoObjectReference: {fileID: 1961987501}
   legsObjectReference: {fileID: 337567995}
-  _hairIndex: 1
+  _hairIndex: 2
   _headIndex: 3
-  _torsoIndex: 1
+  _torsoIndex: 2
   _legsIndex: 3
 --- !u!114 &621543029
 MonoBehaviour:
@@ -2847,7 +2847,7 @@ SpriteRenderer:
   m_SortingLayerID: 1665654509
   m_SortingLayer: 1
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: 6e5c61eac42a8d64fb27caf4c3003d6f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 61a6c1e504bdfd643a3e4b58e4d90b47, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -3105,7 +3105,7 @@ SpriteRenderer:
   m_SortingLayerID: 1665654509
   m_SortingLayer: 1
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: 6464d605efb2aea4b90dbc9f7775eb18, type: 3}
+  m_Sprite: {fileID: 21300000, guid: cc76bec8ae3c273418edf7a25527f876, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
