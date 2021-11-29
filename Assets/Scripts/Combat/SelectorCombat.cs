@@ -38,7 +38,8 @@ public class SelectorCombat : MonoBehaviour {
 			moveable.prevPosition = associatiedCharacter.transform.position;
 			associatiedCharacter.transform.position = gameObject.transform.position;
 		}
-
+		GameObject enemy = GameObject.Find("Enemy");
+		enemy.GetComponent<EnemyAI>().OnTurnChange_DoEnemyAttack();
 	}
 
 	public void ToggleTileType()

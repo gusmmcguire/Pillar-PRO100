@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 647998312742660093}
   - component: {fileID: 647998312742660083}
   - component: {fileID: 647998312742660082}
+  - component: {fileID: 5479952697161406100}
+  - component: {fileID: 1926627839110609046}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -135,6 +137,7 @@ MonoBehaviour:
   CharaAttackRange: 0
   CharaMaxHealth: 0
   CharaMaxMana: 0
+  CharaMaxAP: 0
 --- !u!114 &647998312742660082
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -145,5 +148,29 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f7cc437a245012248a3b04c566b2a12a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5479952697161406100
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 647998312742660094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 485d503805e216c46876226dfd401333, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1926627839110609046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 647998312742660094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d2da14b91de97f45843e0061a149eac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

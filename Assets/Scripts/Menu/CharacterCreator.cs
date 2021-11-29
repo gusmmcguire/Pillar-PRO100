@@ -19,7 +19,7 @@ public class CharacterCreator : MonoBehaviour {
 	private int CharaFrenzy = 1;
 	
 	public void Save() {
-
+		
 	}
 
 	private void Awake() {
@@ -40,6 +40,7 @@ public class CharacterCreator : MonoBehaviour {
 		UnityEngine.SceneManagement.SceneManager.LoadScene(0);
 	}
 	public void GoToGame(){
+		Save();
 		UnityEngine.SceneManagement.SceneManager.LoadScene(2);
 	}
 
