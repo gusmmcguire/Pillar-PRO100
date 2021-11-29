@@ -696,6 +696,15 @@ public partial class @InputSystem : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ToggleRange"",
+                    ""type"": ""Button"",
+                    ""id"": ""e285fd10-a82c-4aca-9824-8310c2249220"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -918,6 +927,28 @@ public partial class @InputSystem : IInputActionCollection2, IDisposable
                     ""action"": ""Submit"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""94c63001-ab23-4609-905d-653267f0ab42"",
+                    ""path"": ""<Keyboard>/tab"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ToggleRange"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ad72df26-fdac-47dc-be6c-206f40ee05dd"",
+                    ""path"": ""<Gamepad>/leftShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ToggleRange"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -981,6 +1012,7 @@ public partial class @InputSystem : IInputActionCollection2, IDisposable
         m_Combat = asset.FindActionMap("Combat", throwIfNotFound: true);
         m_Combat_Movement = m_Combat.FindAction("Movement", throwIfNotFound: true);
         m_Combat_Submit = m_Combat.FindAction("Submit", throwIfNotFound: true);
+        m_Combat_ToggleRange = m_Combat.FindAction("ToggleRange", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -1188,12 +1220,14 @@ public partial class @InputSystem : IInputActionCollection2, IDisposable
     private ICombatActions m_CombatActionsCallbackInterface;
     private readonly InputAction m_Combat_Movement;
     private readonly InputAction m_Combat_Submit;
+    private readonly InputAction m_Combat_ToggleRange;
     public struct CombatActions
     {
         private @InputSystem m_Wrapper;
         public CombatActions(@InputSystem wrapper) { m_Wrapper = wrapper; }
         public InputAction @Movement => m_Wrapper.m_Combat_Movement;
         public InputAction @Submit => m_Wrapper.m_Combat_Submit;
+        public InputAction @ToggleRange => m_Wrapper.m_Combat_ToggleRange;
         public InputActionMap Get() { return m_Wrapper.m_Combat; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1209,6 +1243,9 @@ public partial class @InputSystem : IInputActionCollection2, IDisposable
                 @Submit.started -= m_Wrapper.m_CombatActionsCallbackInterface.OnSubmit;
                 @Submit.performed -= m_Wrapper.m_CombatActionsCallbackInterface.OnSubmit;
                 @Submit.canceled -= m_Wrapper.m_CombatActionsCallbackInterface.OnSubmit;
+                @ToggleRange.started -= m_Wrapper.m_CombatActionsCallbackInterface.OnToggleRange;
+                @ToggleRange.performed -= m_Wrapper.m_CombatActionsCallbackInterface.OnToggleRange;
+                @ToggleRange.canceled -= m_Wrapper.m_CombatActionsCallbackInterface.OnToggleRange;
             }
             m_Wrapper.m_CombatActionsCallbackInterface = instance;
             if (instance != null)
@@ -1219,6 +1256,9 @@ public partial class @InputSystem : IInputActionCollection2, IDisposable
                 @Submit.started += instance.OnSubmit;
                 @Submit.performed += instance.OnSubmit;
                 @Submit.canceled += instance.OnSubmit;
+                @ToggleRange.started += instance.OnToggleRange;
+                @ToggleRange.performed += instance.OnToggleRange;
+                @ToggleRange.canceled += instance.OnToggleRange;
             }
         }
     }
@@ -1254,5 +1294,6 @@ public partial class @InputSystem : IInputActionCollection2, IDisposable
     {
         void OnMovement(InputAction.CallbackContext context);
         void OnSubmit(InputAction.CallbackContext context);
+        void OnToggleRange(InputAction.CallbackContext context);
     }
 }

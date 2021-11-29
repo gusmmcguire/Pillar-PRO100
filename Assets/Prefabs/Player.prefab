@@ -269,6 +269,8 @@ GameObject:
   - component: {fileID: 7885748681788560612}
   - component: {fileID: 7885748681788560614}
   - component: {fileID: 7885748681788560615}
+  - component: {fileID: 372972860826837901}
+  - component: {fileID: 4192037775601244365}
   - component: {fileID: 7885748681788560609}
   - component: {fileID: 7885748681788560608}
   - component: {fileID: 7885748681788560611}
@@ -397,6 +399,33 @@ MonoBehaviour:
   CharaAttackRange: 0
   CharaMaxHealth: 0
   CharaMaxMana: 0
+  CharaMaxAP: 0
+--- !u!114 &372972860826837901
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7885748681788560622}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba4670d730db90644bccb75839263b78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MoveTile: {fileID: 11400000, guid: 615938a88464316498f5f21d3cbb52bf, type: 2}
+  AttackTile: {fileID: 11400000, guid: 471c6967aee1efb4ab9a624a5fbe3718, type: 2}
+--- !u!114 &4192037775601244365
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7885748681788560622}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d2da14b91de97f45843e0061a149eac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &7885748681788560609
 MonoBehaviour:
   m_ObjectHideFlags: 0

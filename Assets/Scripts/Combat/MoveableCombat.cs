@@ -23,7 +23,16 @@ public class MoveableCombat : MonoBehaviour
 				
 				
 				gameObject.GetComponent<Combatable>().OnSelect_Attack(currentCollider.gameObject);
-			}else{
+
+				gameObject.GetComponent<RangeHighlight>().hideHighlight();
+
+				bool tileType = GameObject.Find("Selector").GetComponent<SelectorCombat>().TileType;
+
+				int range = tileType ? gameObject.GetComponent<Statable>().GetCharaMoveRange() : gameObject.GetComponent<Statable>().GetCharaAttackRange();
+				gameObject.GetComponent<RangeHighlight>().ShowHighlight(range, tileType);
+				
+			}
+			else{
 				gameObject.transform.position = prevPosition;
 			}
 		}

@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using System;
 using TMPro;
 using UnityEngine;
 
@@ -13,9 +12,7 @@ public class Combatable : MonoBehaviour {
 	/// <param name="objectTransform">The object that the user is targeting</param>
 	/// <returns>The distance between objects as an int</returns>
 	public Vector2 OnHover_CheckDistance(Transform objectTransform) {
-		float x = Math.Abs(objectTransform.position.x - gameObject.transform.position.x);
-		float y = Math.Abs(objectTransform.position.y - gameObject.transform.position.y);
-		return new Vector2(x, y);
+		return gameObject.GetComponent<UtilFuncs>().CheckDistance(objectTransform);
 	}
 
 	/// <summary>
@@ -95,8 +92,6 @@ public class Combatable : MonoBehaviour {
 		string textToDisplay = (damage == 0) ? $"Miss : {i}" : $"{damage} damage : {i}";
 		textObject.GetComponent<TextMeshProUGUI>().text = textToDisplay;
 
-		Debug.Log($"{textToDisplay} : {textObject.GetComponent<TextMeshProUGUI>().text} : {damage} : {textObject.GetComponent<DamageText>().shouldFloat}");
-		
 		float x = gameObject.transform.position.x + 0.45f;
 		float y = gameObject.transform.position.y + 0.05f;
 		float z = gameObject.transform.position.z - 1;

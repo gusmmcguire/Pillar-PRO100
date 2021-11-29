@@ -26,6 +26,9 @@ public class Statable : MonoBehaviour
     //MP
     [SerializeField] private int CharaMaxMana;
     private int CharaMana;
+    //AP
+    [SerializeField] private int CharaMaxAP;
+    private int CharaAP;
     //IsKilled;
     private bool isKilled = false;
 
@@ -38,7 +41,7 @@ public class Statable : MonoBehaviour
         CharaKnowledge = 10;
         CharaFrenzy = 10;
         CharaMoveRange = 5;
-        CharaAttackRange = 5;
+        CharaAttackRange = 2;
         CharaMaxHealth = 20;
         CharaHealth = 20;
         CharaMaxMana = 20;
