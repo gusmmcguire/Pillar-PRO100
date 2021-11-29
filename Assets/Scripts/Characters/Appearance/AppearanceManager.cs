@@ -33,6 +33,7 @@ public class AppearanceManager : MonoBehaviour {
 		get{ return _hairIndex; }
 		set{
 			if (value >= hairSpriteList.Count) _hairIndex = 0;
+			else if (value < 0) _hairIndex = hairSpriteList.Count - 1;
 			else _hairIndex = value;
 			OnChange_Hair();
 		}
@@ -41,6 +42,7 @@ public class AppearanceManager : MonoBehaviour {
 		get { return _headIndex; }
 		set {
 			if (value >= headSpriteList.Count) _headIndex = 0;
+			else if (value < 0) _headIndex = headSpriteList.Count - 1;
 			else _headIndex = value;
 			OnChange_Head();
 		}
@@ -49,6 +51,7 @@ public class AppearanceManager : MonoBehaviour {
 		get { return _torsoIndex; }
 		set {
 			if (value >= torsoSpriteList.Count) _torsoIndex = 0;
+			else if (value < 0) _torsoIndex = torsoSpriteList.Count - 1;
 			else _torsoIndex = value;
 			OnChange_Torso();
 		}
@@ -57,6 +60,7 @@ public class AppearanceManager : MonoBehaviour {
 		get { return _legsIndex; }
 		set {
 			if (value >= legsSpriteList.Count) _legsIndex = 0;
+			else if (value < 0) _legsIndex = legsSpriteList.Count - 1;
 			else _legsIndex = value;
 			OnChange_Legs();
 		}
