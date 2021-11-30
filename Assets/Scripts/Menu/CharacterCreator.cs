@@ -1,6 +1,8 @@
+using System.IO;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
 using TMPro;
 
 public class CharacterCreator : MonoBehaviour {
@@ -19,7 +21,25 @@ public class CharacterCreator : MonoBehaviour {
 	private int CharaFrenzy = 1;
 	
 	public void Save() {
+		string path = "Assets/SaveFiles/Characters/PlayerOne.txt";
 
+		StreamWriter saveWriter = File.CreateText(path);
+
+		saveWriter.WriteLine($"CharaComposition:{CharaComposition}");
+		saveWriter.WriteLine($"CharaMuscle:{CharaMuscle}");
+		saveWriter.WriteLine($"CharaFerocity:{CharaFerocity}");
+		saveWriter.WriteLine($"CharaSanity:{CharaSanity}");
+		saveWriter.WriteLine($"CharaKnowledge:{CharaKnowledge}");
+		saveWriter.WriteLine($"CharaFrenzy:{CharaFrenzy}");
+
+		saveWriter.WriteLine($"HeadIndex:{character.GetComponent<AppearanceManager>().HeadIndex}");
+		saveWriter.WriteLine($"HairIndex:{character.GetComponent<AppearanceManager>().HairIndex}");
+		saveWriter.WriteLine($"TorsoIndex:{character.GetComponent<AppearanceManager>().TorsoIndex}");
+		saveWriter.WriteLine($"LegsIndex:{character.GetComponent<AppearanceManager>().LegsIndex}");
+
+		saveWriter.Close();
+
+		Debug.Log(File.ReadAllText(path));
 	}
 
 	private void Awake() {
@@ -40,6 +60,7 @@ public class CharacterCreator : MonoBehaviour {
 		UnityEngine.SceneManagement.SceneManager.LoadScene(0);
 	}
 	public void GoToGame(){
+		Save();
 		UnityEngine.SceneManagement.SceneManager.LoadScene(2);
 	}
 
