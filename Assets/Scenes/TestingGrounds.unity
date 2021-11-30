@@ -830,6 +830,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 647998312742660095, guid: c22c2009cd7ed3a48b8cfe1178c77be7, type: 3}
+      propertyPath: m_SortingLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 647998312742660095, guid: c22c2009cd7ed3a48b8cfe1178c77be7, type: 3}
+      propertyPath: m_SortingOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 647998312742660095, guid: c22c2009cd7ed3a48b8cfe1178c77be7, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1665654509
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c22c2009cd7ed3a48b8cfe1178c77be7, type: 3}
 --- !u!1001 &1046981436393593824

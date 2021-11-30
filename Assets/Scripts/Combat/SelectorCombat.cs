@@ -37,6 +37,7 @@ public class SelectorCombat : MonoBehaviour {
 		if (moveable.directionVector.magnitude <= associatiedCharacter.GetComponent<Statable>().GetCharaMoveRange()) {
 			moveable.prevPosition = associatiedCharacter.transform.position;
 			associatiedCharacter.transform.position = gameObject.transform.position;
+			associatiedCharacter.GetComponent<Turns>().ActionEconomy();
 		}
 
 	}
