@@ -4,33 +4,18 @@ using UnityEngine;
 
 public class Turns : MonoBehaviour
 {
-    int ActionPoint = 0;
+    int ActionPoint = 3;
 
     public void ActionEconomy()
     {
-        ActionPoint = 3;
+        ActionPoint--;
 
-        //IF Combat is called
-        //{
-        ActionPoint -= ActionPoint;
-        //}
-
-        //IF Movement is called
-        //{
-        ActionPoint -= ActionPoint;
-        //}
-
-        //IF Special Action is taken (Magic, items, etc)
-        //{
-        ActionPoint -= ActionPoint;
-        //}
-
-        //Free actons?
+        Debug.Log(ActionPoint);
 
         if(ActionPoint <= 0)
         {
-            //Call EnemyAI
-            return;
+            ActionPoint = 3;
+            GameObject.Find("Enemy").GetComponent<EnemyAI>().OnTurnChange_DoEnemyAttack();
         }
 
     }

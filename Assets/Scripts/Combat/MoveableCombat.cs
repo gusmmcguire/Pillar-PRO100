@@ -30,7 +30,6 @@ public class MoveableCombat : MonoBehaviour
 
 				int range = tileType ? gameObject.GetComponent<Statable>().GetCharaMoveRange() : gameObject.GetComponent<Statable>().GetCharaAttackRange();
 				gameObject.GetComponent<RangeHighlight>().ShowHighlight(range, tileType);
-				
 			}
 			else{
 				gameObject.transform.position = prevPosition;
