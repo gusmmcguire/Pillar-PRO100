@@ -20,5 +20,10 @@ public class Turns : MonoBehaviour
 
     }
 
+    public void CombatEnd()
+    {
+
+    }
+
 
 }
