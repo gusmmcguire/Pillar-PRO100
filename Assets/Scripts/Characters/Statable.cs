@@ -31,6 +31,10 @@ public class Statable : MonoBehaviour
     private int CharaAP;
     //IsKilled;
     private bool isKilled = false;
+    private bool IsKilled
+    {
+        get => isKilled;
+    }
 
     public void Awake()
     {
@@ -167,11 +171,5 @@ public class Statable : MonoBehaviour
     public void SetCharaMana(int mana = 10)
     {
         CharaMana = mana;
-    }
-
-    //Getter for isKilled
-    public bool GetIsKilled()
-    {
-        return isKilled;
     }
 }
