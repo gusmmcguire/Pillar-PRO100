@@ -99,4 +99,12 @@ public class Combatable : MonoBehaviour {
 		textObject.transform.SetPositionAndRotation(new Vector3(x, y, z), new Quaternion());
 		textObject.GetComponent<DamageText>().shouldFloat = true;
 	}
+
+	public void OnDeath_Destroy()
+	{
+		if (gameObject.GetComponent<Statable>().IsKilled() == true)
+		{
+			Destroy(gameObject);
+		}
+	}
 }

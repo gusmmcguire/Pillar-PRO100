@@ -28,4 +28,6 @@ public class EnemyAI : MonoBehaviour
             gameObject.GetComponent<Combatable>().OnSelect_Attack(player);
         }
     }
+
+    
 }
