@@ -102,7 +102,7 @@ public class Combatable : MonoBehaviour {
 
 	public void OnDeath_Destroy()
 	{
-		if (gameObject.GetComponent<Statable>().IsKilled() == true)
+		if (gameObject.GetComponent<Statable>().IsKilled == true)
 		{
 			Destroy(gameObject);
 		}
