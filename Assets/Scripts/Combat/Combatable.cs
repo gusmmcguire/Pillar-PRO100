@@ -105,6 +105,7 @@ public class Combatable : MonoBehaviour {
 		if (gameObject.GetComponent<Statable>().IsKilled == true)
 		{
 			Destroy(gameObject);
+			
 		}
 	}
 }

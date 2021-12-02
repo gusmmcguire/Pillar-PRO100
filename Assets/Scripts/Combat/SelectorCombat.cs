@@ -12,6 +12,7 @@ public class SelectorCombat : MonoBehaviour {
 	public bool TileType { get => tileType; }
 
 	private void Update() {
+		if (!associatiedCharacter) return;
 		if (Mouse.current.delta.ReadUnprocessedValue().x != 0 || Mouse.current.delta.ReadUnprocessedValue().y != 0) {
 			gameObject.GetComponent<Transform>().position = worldCamera.ScreenToWorldPoint(new Vector3(Mouse.current.position.ReadUnprocessedValue().x, Mouse.current.position.ReadUnprocessedValue().y, 0));
 			mouseHasControl = true;

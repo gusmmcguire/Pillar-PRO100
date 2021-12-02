@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7503283657423265934}
   - component: {fileID: 7503283657423265933}
+  - component: {fileID: 1330970399938229754}
   - component: {fileID: 7503283657423265921}
   - component: {fileID: 7503283657423265920}
   - component: {fileID: 7503283657423265935}
@@ -87,6 +88,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1330970399938229754
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7503283657423265932}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e33e6d596df04b4d80af2741035fb3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &7503283657423265921
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -192,6 +205,10 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 8ce7b2c1-3969-4058-804a-2794f21b0b28
     m_ActionName: Combat/Submit[/Keyboard/enter,/Keyboard/e,/Keyboard/space,/Keyboard/c]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: e285fd10-a82c-4aca-9824-8310c2249220
+    m_ActionName: Combat/ToggleRange[/Keyboard/tab]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: Game
   m_DefaultActionMap: Combat

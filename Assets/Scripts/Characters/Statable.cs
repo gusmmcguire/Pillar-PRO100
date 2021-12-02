@@ -159,7 +159,11 @@ public class Statable : MonoBehaviour
     public void SetCharaHealth(int health = 10)
     {
         CharaHealth = health;
-        if (CharaHealth <= 0) isKilled = true;
+        if (CharaHealth <= 0)
+        {
+            isKilled = true;
+            gameObject.GetComponent<Combatable>().OnDeath_Destroy();
+        }
         else if (isKilled) isKilled = false;
     }
 
