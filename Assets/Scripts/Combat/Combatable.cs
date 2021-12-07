@@ -4,7 +4,6 @@ using TMPro;
 using UnityEngine;
 
 public class Combatable : MonoBehaviour {
-	int i = 0;
 
 	/// <summary>
 	/// Checks the distance between currently active object and targeted object
@@ -60,6 +59,7 @@ public class Combatable : MonoBehaviour {
 		if (combatComponent) {
 			float hitChance = OnHover_CalcHitChance(gameObject.transform);
 			float rndHit = UnityEngine.Random.Range(0.0f, 1.0f);
+			//rndHit = rndHit > 1 ? 1 : rndHit;
 			if (hitChance >= rndHit) {
 				combatComponent.OnDamaged_LowerHealth(damage);
 			}
@@ -75,7 +75,6 @@ public class Combatable : MonoBehaviour {
 	/// <param name="damage">Damage recieved</param>
 	public void OnDamaged_LowerHealth(int damage) {
 		int currentHealth = GetComponent<Statable>().GetCharaHealth();
-
 		currentHealth -= damage;
 		GetComponent<Statable>().SetCharaHealth(currentHealth);
 
@@ -88,8 +87,7 @@ public class Combatable : MonoBehaviour {
 	/// <param name="damage">The amount of damage recieved</param>
 	private void OnDamaged_DisplayDamage(int damage) {
 		GameObject textObject = GameObject.Find("DamageText");
-		i++;
-		string textToDisplay = (damage == 0) ? $"Miss : {i}" : $"{damage} damage : {i}";
+		string textToDisplay = (damage == 0) ? $"Miss" : $"{damage} damage";
 		textObject.GetComponent<TextMeshProUGUI>().text = textToDisplay;
 
 		float x = gameObject.transform.position.x + 0.45f;
@@ -104,6 +102,19 @@ public class Combatable : MonoBehaviour {
 	{
 		if (gameObject.GetComponent<Statable>().IsKilled == true)
 		{
+			GameObject eventSystem = GameObject.Find("EventSystem");
+			if (gameObject.name == "Player")
+            {
+				eventSystem.GetComponent<Turns>().shouldGameEnd = true;
+				eventSystem.GetComponent<Turns>().winLose = false;
+            }else {
+				GameObject[] gameObjects = GameObject.FindGameObjectsWithTag("Enemy");
+				if(gameObjects.Length <= 1)
+                {
+					eventSystem.GetComponent<Turns>().shouldGameEnd = true;
+					eventSystem.GetComponent<Turns>().winLose = true;
+				}
+            }
 			Destroy(gameObject);
 			
 		}

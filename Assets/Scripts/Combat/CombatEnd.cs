@@ -6,12 +6,12 @@ public class CombatEnd : MonoBehaviour
 {
     void Update()
     {
-        Debug.Log("Update!");
+        /*Debug.Log("Update!");
         GameObject Player = GameObject.Find("Player");
         GameObject Enemy = GameObject.Find("Enemy");
         if (!Enemy || !Player)
         {
             Application.Quit();
-        }
+        }*/
     }
 }

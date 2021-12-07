@@ -5,24 +5,38 @@ using UnityEngine;
 public class Turns : MonoBehaviour
 {
     int ActionPoint = 3;
+    public bool shouldGameEnd;
+    public bool winLose;
+
+    private void Update()
+    {
+        if (shouldGameEnd) CombatEnd();
+    }
 
     public void ActionEconomy()
     {
         ActionPoint--;
 
-        Debug.Log(ActionPoint);
 
         if(ActionPoint <= 0)
         {
             ActionPoint = 3;
-            GameObject.Find("Enemy").GetComponent<EnemyAI>().OnTurnChange_DoEnemyAttack();
+            GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+            foreach(GameObject enemy in enemies)
+            {
+                enemy.GetComponent<EnemyAI>().OnTurnChange_DoEnemyAttack();
+            }
         }
 
     }
 
     public void CombatEnd()
     {
-
+        shouldGameEnd = false;
+        //if player wins
+        if(winLose) StartCoroutine(BattleInteractions.GameWin());
+        //if player loses
+        else StartCoroutine(BattleInteractions.GameOver());
     }
 
 

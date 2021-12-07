@@ -501,8 +501,8 @@ MonoBehaviour:
   textToUpdate:
   - {fileID: 1777548942}
   - {fileID: 739091115}
-  - {fileID: 1875102981}
   - {fileID: 883460364}
+  - {fileID: 1875102981}
   - {fileID: 1054370250}
   - {fileID: 1671268026}
   - {fileID: 2742690}
@@ -510,7 +510,7 @@ MonoBehaviour:
   - {fileID: 586149272}
   - {fileID: 2060656789}
   - {fileID: 847121990}
-  pointsLeftToSpend: 21
+  pointsLeftToSpend: 30
 --- !u!4 &98284018
 Transform:
   m_ObjectHideFlags: 0

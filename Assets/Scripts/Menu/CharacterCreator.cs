@@ -39,7 +39,7 @@ public class CharacterCreator : MonoBehaviour {
 
 		saveWriter.Close();
 
-		Debug.Log(File.ReadAllText(path));
+		//Debug.Log(File.ReadAllText(path));
 	}
 
 	private void Awake() {

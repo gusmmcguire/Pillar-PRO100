@@ -27,7 +27,6 @@ public class MainMenuHandler : MonoBehaviour {
 	}
 
 	public void OnClick_Begin() {
-		Debug.Log("Game is Beginning! Wooooooooo!");
 		SceneManager.LoadScene(1);
 	}
 
@@ -40,7 +39,6 @@ public class MainMenuHandler : MonoBehaviour {
 	}
 
 	public void OnClick_Exit() {
-		Debug.Log("Game is Quitting! Wooooooooo!");
 		Application.Quit();
 	}
 

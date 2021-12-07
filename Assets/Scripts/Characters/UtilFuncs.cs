@@ -25,6 +25,7 @@ public class UtilFuncs : MonoBehaviour
         StreamReader loadReader = File.OpenText(path);
         string line = loadReader.ReadLine();
         statable.SetCharaComposition(int.Parse(line.Substring(line.IndexOf(':') + 1)));
+        statable.SetCharaHealth(statable.GetCharaMaxHealth());
         
         line = loadReader.ReadLine();
         statable.SetCharaMuscle(int.Parse(line.Substring(line.IndexOf(':') + 1)));

@@ -9,7 +9,7 @@ public class EnemyAI : MonoBehaviour
 	}
     IEnumerator OnLogic_FindLocation()
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(1f);
         GameObject player = GameObject.Find("Player");
         Statable statable = gameObject.GetComponent<Statable>();
         if (gameObject.GetComponent<UtilFuncs>().CheckDistance(player.transform).magnitude < statable.GetCharaMoveRange())

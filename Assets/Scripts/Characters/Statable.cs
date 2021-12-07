@@ -22,7 +22,8 @@ public class Statable : MonoBehaviour
     [SerializeField] private int CharaAttackRange;
     //HP
     [SerializeField] private int CharaMaxHealth;
-    private int CharaHealth;
+    //REMOVE SERIALIZEFIELD WHEN DONE
+    [SerializeField] private int CharaHealth;
     //MP
     [SerializeField] private int CharaMaxMana;
     private int CharaMana;
@@ -54,6 +55,11 @@ public class Statable : MonoBehaviour
             CharaMaxMana = 20;
             CharaMana = 20;
         }
+    }
+
+    private void Update()
+    {
+
     }
 
     //SideCharacterStats to go Here-ish(Porbably use random to generate a concrete value)
@@ -165,6 +171,7 @@ public class Statable : MonoBehaviour
             gameObject.GetComponent<Combatable>().OnDeath_Destroy();
         }
         else if (isKilled) isKilled = false;
+        
     }
 
     //Getter and setter for MaxMana
