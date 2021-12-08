@@ -18,7 +18,7 @@ public class UtilFuncs : MonoBehaviour
     {
         Statable statable = gameObject.GetComponent<Statable>();
         AppearanceManager appManager = gameObject.GetComponent<AppearanceManager>();
-        string path = "Assets/SaveFiles/Characters/PlayerOne.txt";
+        string path = Application.isEditor ? "Assets/SaveFiles/Characters/PlayerOne.txt" : "Pillar_Data/SaveFiles/Characters/PlayerOne.txt";
 
         if (!File.Exists(path)) return false;
 
@@ -54,7 +54,7 @@ public class UtilFuncs : MonoBehaviour
         line = loadReader.ReadLine();
         appManager.LegsIndex = int.Parse(line.Substring(line.IndexOf(':') + 1));
 
-        Debug.Log(statable.ToString());
+        //Debug.Log(statable.ToString());
 
         return true;
     }

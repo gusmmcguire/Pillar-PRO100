@@ -1,10 +1,10 @@
-CharaComposition:6
+CharaComposition:7
 CharaMuscle:6
 CharaFerocity:6
 CharaSanity:6
-CharaKnowledge:6
+CharaKnowledge:5
 CharaFrenzy:6
 HeadIndex:1
-HairIndex:2
-TorsoIndex:2
-LegsIndex:3
+HairIndex:1
+TorsoIndex:1
+LegsIndex:1
