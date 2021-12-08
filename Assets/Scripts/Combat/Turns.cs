@@ -15,12 +15,13 @@ public class Turns : MonoBehaviour
 
     public void ActionEconomy()
     {
-        ActionPoint--;
-
+        BattleInteractions.DisableAPUI(--ActionPoint);
 
         if(ActionPoint <= 0)
         {
             ActionPoint = 3;
+            BattleInteractions.EnableAllAPUI();
+
             GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
             foreach(GameObject enemy in enemies)
             {
