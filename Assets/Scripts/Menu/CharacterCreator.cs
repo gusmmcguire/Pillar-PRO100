@@ -21,7 +21,7 @@ public class CharacterCreator : MonoBehaviour {
 	private int CharaFrenzy = 1;
 	
 	public void Save() {
-		string path = "Assets/SaveFiles/Characters/PlayerOne.txt";
+		string path = Application.isEditor ? "Assets/SaveFiles/Characters/PlayerOne.txt" : "Pillar_Data/SaveFiles/Characters/PlayerOne.txt";
 
 		StreamWriter saveWriter = File.CreateText(path);
 
@@ -39,7 +39,7 @@ public class CharacterCreator : MonoBehaviour {
 
 		saveWriter.Close();
 
-		//Debug.Log(File.ReadAllText(path));
+		Debug.Log(File.ReadAllText(path));
 	}
 
 	private void Awake() {
