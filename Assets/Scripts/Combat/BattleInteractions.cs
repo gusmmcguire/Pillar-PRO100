@@ -39,7 +39,7 @@ public class BattleInteractions : MonoBehaviour
     public void NextMap()
     {
 
-        int randInt = Random.Range(1, 6);
+        int randInt = Random.Range(1, 7);
         SceneManager.LoadScene(1 + randInt);
     }
 
