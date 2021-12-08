@@ -8,6 +8,10 @@ public class BattleInteractions : MonoBehaviour
 {
     static GameObject canvasGameOver;
     static GameObject canvasGameWin;
+    static GameObject[] apUI = new GameObject[3];
+
+    static Sprite unspentAP;
+    static Sprite spentAP;
 
     private void Awake()
     {
@@ -15,6 +19,11 @@ public class BattleInteractions : MonoBehaviour
         canvasGameOver.SetActive(false);
         canvasGameWin = GameObject.Find("GameWin");
         canvasGameWin.SetActive(false);
+        apUI[0] = GameObject.Find("imageAP1");
+        apUI[1] = GameObject.Find("imageAP2");
+        apUI[2] = GameObject.Find("imageAP3");
+        unspentAP = Resources.Load<Sprite>("APFull");
+        spentAP = Resources.Load<Sprite>("APUsed");
     }
 
     public void GoToMenu()
@@ -39,5 +48,22 @@ public class BattleInteractions : MonoBehaviour
         yield return new WaitForSeconds(1.5f);
         canvasGameWin.SetActive(true);
         GameObject.Find("Menu").GetComponent<Button>().Select();
+    }
+
+    public static void DisableAPUI(int numAP)
+    {
+        apUI[numAP].GetComponent<Image>().sprite = spentAP;
+    }
+    
+    public static void EnableAPUI(int numAP)
+    {
+        apUI[numAP].GetComponent<Image>().sprite = unspentAP;
+    }
+
+    public static void EnableAllAPUI()
+    {
+        EnableAPUI(0);
+        EnableAPUI(1);
+        EnableAPUI(2);
     }
 }
