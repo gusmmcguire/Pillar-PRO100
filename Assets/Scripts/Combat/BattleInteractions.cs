@@ -22,8 +22,8 @@ public class BattleInteractions : MonoBehaviour
         apUI[0] = GameObject.Find("imageAP1");
         apUI[1] = GameObject.Find("imageAP2");
         apUI[2] = GameObject.Find("imageAP3");
-        unspentAP = Resources.Load<Sprite>("APFull");
-        spentAP = Resources.Load<Sprite>("APUsed");
+        unspentAP = Resources.Load<Sprite>("Art/APFull");
+        spentAP = Resources.Load<Sprite>("Art/APUsed");
     }
 
     public void GoToMenu()

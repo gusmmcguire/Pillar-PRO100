@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class Statable : MonoBehaviour
@@ -55,11 +56,14 @@ public class Statable : MonoBehaviour
             CharaMaxMana = 20;
             CharaMana = 20;
         }
+        if(gameObject.CompareTag("Player"))
+        {
+            DisplayHealth();
+        }
     }
-
-    private void Update()
+    public void DisplayHealth()
     {
-
+        GameObject.Find("textHP").GetComponent<TextMeshProUGUI>().text = $"{GetCharaHealth()} / {GetCharaMaxHealth()}";
     }
 
     //SideCharacterStats to go Here-ish(Porbably use random to generate a concrete value)

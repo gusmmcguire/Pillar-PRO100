@@ -277,7 +277,7 @@ GameObject:
   - component: {fileID: 7885748681788560611}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -399,6 +399,7 @@ MonoBehaviour:
   CharaMoveRange: 0
   CharaAttackRange: 0
   CharaMaxHealth: 0
+  CharaHealth: 0
   CharaMaxMana: 0
   CharaMaxAP: 0
 --- !u!114 &372972860826837901
@@ -439,6 +440,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30bff3027a73cea43841f01338bbaf7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shouldGameEnd: 0
+  winLose: 0
 --- !u!114 &7885748681788560609
 MonoBehaviour:
   m_ObjectHideFlags: 0
