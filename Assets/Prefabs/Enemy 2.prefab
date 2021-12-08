@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 5479952697161406100}
   - component: {fileID: 1926627839110609046}
   m_Layer: 0
-  m_Name: Enemy
+  m_Name: Enemy 2
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -127,12 +127,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6f6376b7f61fb44b8e72034022ad7f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CharaComposition: 3
-  CharaMuscle: 4
-  CharaFerocity: 3
-  CharaSanity: 3
-  CharaKnowledge: 5
-  CharaFrenzy: 4
+  CharaComposition: 5
+  CharaMuscle: 2
+  CharaFerocity: 5
+  CharaSanity: 6
+  CharaKnowledge: 9
+  CharaFrenzy: 10
   CharaMoveRange: 5
   CharaAttackRange: 2
   CharaMaxHealth: 20

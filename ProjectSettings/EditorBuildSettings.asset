@@ -12,7 +12,19 @@ EditorBuildSettings:
     path: Assets/Scenes/Menus/CharacterCreator.unity
     guid: 516c0b3a0a3f2384187e23c3d2363ac1
   - enabled: 1
-    path: Assets/Scenes/TestingGrounds.unity
-    guid: 1cb1f48ddb4f0d849920ffb62fe720b5
+    path: Assets/Scenes/CombatMaps/Battle1.unity
+    guid: d566838f6ed5eea4783ad544a505a47e
+  - enabled: 1
+    path: Assets/Scenes/CombatMaps/Battle2.unity
+    guid: 7c1fc5d7b9f7dbb459af9757141b329e
+  - enabled: 1
+    path: Assets/Scenes/CombatMaps/Battle3.unity
+    guid: 464051dcca43ee4469763d05ccfdbc56
+  - enabled: 1
+    path: Assets/Scenes/CombatMaps/Battle4.unity
+    guid: fddae7692ec19df4ba6b8ae8fa41b33d
+  - enabled: 1
+    path: Assets/Scenes/CombatMaps/Battle5.unity
+    guid: aab7daf25b4d048419ce00209a08b4f5
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 8e9dd59e7005ca840862066637d43404, type: 2}

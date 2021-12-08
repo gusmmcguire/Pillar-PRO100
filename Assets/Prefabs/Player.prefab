@@ -160,7 +160,7 @@ SpriteRenderer:
   m_SortingLayerID: 1665654509
   m_SortingLayer: 1
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: cc76bec8ae3c273418edf7a25527f876, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6464d605efb2aea4b90dbc9f7775eb18, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -244,7 +244,7 @@ SpriteRenderer:
   m_SortingLayerID: 1665654509
   m_SortingLayer: 1
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: 61a6c1e504bdfd643a3e4b58e4d90b47, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6e5c61eac42a8d64fb27caf4c3003d6f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -271,7 +271,6 @@ GameObject:
   - component: {fileID: 7885748681788560615}
   - component: {fileID: 372972860826837901}
   - component: {fileID: 4192037775601244365}
-  - component: {fileID: 2415729374125837692}
   - component: {fileID: 7885748681788560609}
   - component: {fileID: 7885748681788560608}
   - component: {fileID: 7885748681788560611}
@@ -327,29 +326,33 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6e5c61eac42a8d64fb27caf4c3003d6f, type: 3}
   - {fileID: 21300000, guid: 61a6c1e504bdfd643a3e4b58e4d90b47, type: 3}
   - {fileID: 21300000, guid: 1367ea44d7c32c84d9098745e7ebd480, type: 3}
+  - {fileID: 21300000, guid: 20a8f4aaab945ef4fba383a6f1b6d702, type: 3}
   headSpriteList:
   - {fileID: 0}
   - {fileID: 21300000, guid: 4e0d12c71050efe48b88653cb6838e09, type: 3}
   - {fileID: 21300000, guid: 39fa12e9983df314fae14e6d07cd230a, type: 3}
   - {fileID: 21300000, guid: 7cda164f2ccbd7b4392dad09ef0734ad, type: 3}
+  - {fileID: 21300000, guid: 049d60aaab1c7294b8246c5d3cdbe6e4, type: 3}
   torsoSpriteList:
   - {fileID: 0}
   - {fileID: 21300000, guid: 6464d605efb2aea4b90dbc9f7775eb18, type: 3}
   - {fileID: 21300000, guid: cc76bec8ae3c273418edf7a25527f876, type: 3}
   - {fileID: 21300000, guid: 67d008839446ae04abe0c90133370299, type: 3}
+  - {fileID: 21300000, guid: 4a1b5d9141109474e88b34f9e49de04f, type: 3}
   legsSpriteList:
   - {fileID: 0}
   - {fileID: 21300000, guid: 2ba305b1d775fd3478edc68cdc35cfc5, type: 3}
   - {fileID: 21300000, guid: 08063210f3653a84db2a26549b4c6e42, type: 3}
   - {fileID: 21300000, guid: 5a2006e9701033048a96277b0a5e4c40, type: 3}
+  - {fileID: 21300000, guid: 795b6cf1c1f970248b5a28d9aec4d1ea, type: 3}
   hairObjectReference: {fileID: 7885748681526647704}
   headObjectReference: {fileID: 7885748681899686113}
   torsoObjectReference: {fileID: 7885748681016174384}
   legsObjectReference: {fileID: 7885748682611886694}
-  _hairIndex: 2
-  _headIndex: 3
-  _torsoIndex: 2
-  _legsIndex: 3
+  _hairIndex: 1
+  _headIndex: 1
+  _torsoIndex: 1
+  _legsIndex: 1
 --- !u!114 &7885748681788560612
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -428,20 +431,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d2da14b91de97f45843e0061a149eac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &2415729374125837692
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7885748681788560622}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30bff3027a73cea43841f01338bbaf7c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  shouldGameEnd: 0
-  winLose: 0
 --- !u!114 &7885748681788560609
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -575,7 +564,7 @@ SpriteRenderer:
   m_SortingLayerID: 1665654509
   m_SortingLayer: 1
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 7cda164f2ccbd7b4392dad09ef0734ad, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4e0d12c71050efe48b88653cb6838e09, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -659,7 +648,7 @@ SpriteRenderer:
   m_SortingLayerID: 1665654509
   m_SortingLayer: 1
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 5a2006e9701033048a96277b0a5e4c40, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2ba305b1d775fd3478edc68cdc35cfc5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

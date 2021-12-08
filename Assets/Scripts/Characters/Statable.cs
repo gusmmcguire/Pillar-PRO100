@@ -41,21 +41,6 @@ public class Statable : MonoBehaviour
     public void Awake()
     {
         if(gameObject.GetComponent<AppearanceManager>()) gameObject.GetComponent<UtilFuncs>().Load();
-        else
-        {
-            CharaComposition = 10;
-            CharaMuscle = 10;
-            CharaFerocity = 10;
-            CharaSanity = 3;
-            CharaKnowledge = 10;
-            CharaFrenzy = 10;
-            CharaMoveRange = 5;
-            CharaAttackRange = 2;
-            CharaMaxHealth = 20;
-            CharaHealth = 20;
-            CharaMaxMana = 20;
-            CharaMana = 20;
-        }
         if(gameObject.CompareTag("Player"))
         {
             DisplayHealth();

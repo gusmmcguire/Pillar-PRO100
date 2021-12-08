@@ -36,6 +36,13 @@ public class BattleInteractions : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
+    public void NextMap()
+    {
+
+        int randInt = Random.Range(1, 6);
+        SceneManager.LoadScene(1 + randInt);
+    }
+
     public static IEnumerator GameOver()
     {
         yield return new WaitForSeconds(1.5f);

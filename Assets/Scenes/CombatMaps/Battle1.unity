@@ -3153,7 +3153,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1411718991}
         m_TargetAssemblyTypeName: BattleInteractions, Assembly-CSharp
-        m_MethodName: RestartMap
+        m_MethodName: NextMap
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
